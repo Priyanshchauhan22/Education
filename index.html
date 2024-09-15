@@ -5,38 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
+        /* Full-page background */
         body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            font-family: 'Poppins', sans-serif;
         }
 
-        h1 {
-            font-size: 64px;
-            color: #ffffff;
-            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
-            animation: glow 2s ease-in-out infinite alternate;
-            padding: 20px 40px;
-            background: rgba(255, 255, 255, 0.2);
+        /* Glass effect on the text container */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7, 0 0 50px #ff6ec7, 0 0 60px #ff6ec7, 0 0 70px #ff6ec7;
+        /* Glowing text with subtle animation */
+        h1 {
+            font-size: 72px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(255, 255, 255, 0.6),
+                         0 0 30px #f39c12, 
+                         0 0 40px #f39c12, 
+                         0 0 50px #e74c3c, 
+                         0 0 60px #e74c3c, 
+                         0 0 70px #e74c3c;
+            animation: glowing 2s infinite alternate;
+        }
+
+        /* Glowing animation */
+        @keyframes glowing {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                             0 0 20px rgba(255, 255, 255, 0.6),
+                             0 0 30px #f39c12, 
+                             0 0 40px #f39c12, 
+                             0 0 50px #e74c3c, 
+                             0 0 60px #e74c3c, 
+                             0 0 70px #e74c3c;
             }
-            to {
-                text-shadow: 0 0 20px #ffffff, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7, 0 0 50px #ff6ec7, 0 0 60px #ff6ec7, 0 0 70px #ff6ec7, 0 0 80px #ff6ec7;
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
+                             0 0 30px rgba(255, 255, 255, 0.6),
+                             0 0 40px #f39c12, 
+                             0 0 50px #f39c12, 
+                             0 0 60px #e74c3c, 
+                             0 0 70px #e74c3c, 
+                             0 0 80px #e74c3c;
             }
+        }
+
+        /* Subtle message text below the heading */
+        p {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Soon...</h1>
+    <!-- Glassmorphism text container -->
+    <div class="glass-box">
+        <h1>Soon...</h1>
+        <p>Something amazing is coming your way!</p>
+    </div>
 </body>
 </html>
